@@ -24,7 +24,7 @@ function loadEventListeners() {
 
 function addTask(e) {
     if (taskInput.value === '') {
-        console.log('Add A task');
+        console.log('Add A wish');
     }
 
     // create li element
