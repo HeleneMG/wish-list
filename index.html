@@ -2,29 +2,39 @@
 <html>
     <head>
         <meta charset=UTF-8">
+        <link rel="stylesheet" href="style.css">
         <title>Wishlist</title>
     </head>
     <body>
-        <h1>WishList</h1>
-        <form method="post" action="email.php">
-            <label> Votre message :</label>
-            <textarea id="message" name="message"></textarea>
-            <input type="submit">
-        </form>
-        <script>
-            document.forms[0].addEventListener("submit", function (evenement) {
-                if (document.getElementById("email").value == "") {
-                    evenement.preventDefault();
-                    alert("Tapez un email valable pour avoir une réponse.");
-                    document.getElementById("email").focus();
-                }
-                else if (document.getElementById("message").value == "") {
-                    evenement.preventDefault();
-                    alert("Pensez à taper un message !");
-                    document.getElementById("message").focus();
-                }
-            });
-        </script>
-        <script src="wish-list.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div id="main" class="card">
+                <div class="card-content">
+                    <span class="card-title">Task list</span>
+                    <div class="row">
+                        <form id="task-form" action="index.php">
+                            <div class="input-field col s12">
+                                <input type="text" name="task" id="task" value="">
+                                <label for="task">New task</label>
+                            </div>
+                            <input type="submit" value="Add Task" class="btn">
+                        </form>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <h5 id="task-title">Tasks</h5>
+                    <div class="input-field col s12">
+                        <input type="text" name="filter" id="filter" value="">
+                        <label for="filter">Filter tasks</label>
+                    </div>
+                    <ul class="collection"></ul>
+                    <a href="#" class="clear-tasks btn black">Clear tasks</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        
+<script src="wish-list.js"></script>
     </body>
 </html>
